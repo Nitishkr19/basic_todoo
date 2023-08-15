@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+<h1>Work List</h1>
+<p>
+    <ul>
+        <% strn2.forEach((st, index) => { %> 
+            <li>
+                <input type="checkbox" id="checkbox<%= index %>" class="checkbox">
+                <label for="checkbox<%= index %>"><%= st %></label>
+            </li>
+        <% }) %>
+    </ul>
+</p>
+
+    <form action="/submit2" method="POST">
+        <input type="text" name="event" placeholder="write event detail">
+        <input type="submit" value="submit">
+    </form>
+
+
+
+
+<%- include("partials/footer.ejs") %>

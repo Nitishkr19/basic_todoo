@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+<h1>Today Work</h1>
+<h3><%= locals.daye %> </h3>
+<p>
+    <ul>
+        <% strn.forEach((st, index) => { %> 
+            <li>
+                <input type="checkbox" id="checkbox<%= index %>" class="checkbox">
+                <label for="checkbox<%= index %>"><%= st %></label>
+            </li>
+        <% }) %>
+    </ul>
+</p>
+<form action="/submit" method="POST">
+    <input type="text" name="event" placeholder="write event detail">
+    <input type="submit" value="submit">
+</form>
+    
+<%- include("partials/footer.ejs") %>
